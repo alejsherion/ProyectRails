@@ -49,3 +49,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #add Devise gem for login and authentication
 gem 'devise'
+
+# adds bootstrap to rails with Sass as a preprocessor
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
