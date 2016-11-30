@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  create_date: 2016-11-29 20:42:35
+  star_date: 2016-11-29
+  end_date: 2016-11-29
+  due_date: 2016-11-29 20:42:35
+  title: MyString
+  description: MyString
+  priority: 1
+
+two:
+  create_date: 2016-11-29 20:42:35
+  star_date: 2016-11-29
+  end_date: 2016-11-29
+  due_date: 2016-11-29 20:42:35
+  title: MyString
+  description: MyString
+  priority: 1
