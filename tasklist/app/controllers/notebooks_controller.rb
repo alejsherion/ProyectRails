@@ -18,9 +18,10 @@ class NotebooksController < ApplicationController
   def create
     @notebook = Notebook.new(notebook_params)
     if @notebook.save
+      flash[:success] = "Notebook created. Ok"
       redirect_to notebook_params
     else
-      flash[:error] = "Notebook created. OK"
+      flash[:error] = "Notebook can't be created"
       render 'new'
     end
   end
@@ -32,6 +33,7 @@ class NotebooksController < ApplicationController
     else
       flash[:error] = "Notebook can't be destroyed"
     end
+    redirect_to notebook_path
   end
 
   def update
@@ -40,7 +42,7 @@ class NotebooksController < ApplicationController
       flash[:success] = "Notebook updated. Ok"
       redirect_to notebook_path
     else
-      flash[:error] = "Notebook can't be updated"
+      #flash[:error] = "Notebook can't be updated"
       render 'edit'
     end
   end
