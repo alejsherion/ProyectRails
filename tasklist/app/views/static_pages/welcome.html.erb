@@ -1,7 +1,7 @@
 <div class="jumbotron">
   <% if user_signed_in? %>
-    <h1 class="text-center">Welcome back, trusted user!</h1>
-    <p class="text-center">
+    <h1 Welcome back, trusted user!</h1>
+    <p class="lead">
       You have signed in!  If this were a real app some sweet conent
       would go here.  But it's just a test.  You might want to sign out now.
     </p>
@@ -14,11 +14,19 @@
     </p>
     <div class="row-fluid">
       <div class="text-center">
-        <%= link_to "Sign In", new_user_session_path, :class => "btn btn-success" %>
+        <%= link_to "Sign In", new_user_session_path, :class => "btn btn-primary" %>
       </div>
+      <p>
+      </p>
       <div class="text-center">
-        <%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-success" %>
+        <%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-primary" %>
+      </div>
+      <p>
+      </p>
+      <div>
+      <img src="http://www.totemguard.com/aulatotem/wp-content/uploads/2013/05/evernote_reminders.jpg" style="margin: 0 auto; width: 30%; display: block;">
       </div>
     </div>
-  <% end %>
+          <% end %>
+
 </div>
