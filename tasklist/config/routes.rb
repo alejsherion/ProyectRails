@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'notebooks/new'
+
+  get 'notebooks/index'
+
+  get 'notebooks/show'
+
+  get 'notebooks/edit'
+
+  get 'notebooks/update'
+
+  get 'notebooks/delete'
+
   get 'tasks/new'
 
   get 'tasks/index'
