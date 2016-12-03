@@ -1,1 +1,33 @@
-<%= form_for(@task, :html => {:title => "form form-horizontal"}) do |f| %>
+<% form_name ||= "Tasks" %>
+<h1 class="text-center">  <%= form_name %> New Task </h1>
+<%= form_for @task , method: (form_name.downcase == 'edit' ? 'put' : 'post') do |f| %>
+  <% if @task.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@task.errors.count, "error") %> prohibited
+          this article from being saved:
+        </h2>
+        <ul>
+          <% @task.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <div class="form-group">
+    <%= f.label :title%>
+    <%= f.text_field :title, class: "form-control" %>
+    <%= f.label :description%>
+    <%= f.text_field :description, class: "form-control" %>
+    <%= f.label :create_date%>
+    <%= f.text_field :created_at, class: "form-control" %>
+    <%= f.label :due_date%>
+    <%= f.text_field :due_date, class: "form-control" %>
+    <%= f.label :end_date%>
+    <%= f.text_field :end_date, class: "form-control" %>
+    <%= f.label :priority%>
+    <%= f.text_field :priority, class: "form-control" %>
+  </div>
+  <%= f.submit "#{form_name} tasks", class: "btn btn-primary" %>
+  <a href="<%= tasks_path %>" class="btn btn-default"> View all </a>
+<% end %>
