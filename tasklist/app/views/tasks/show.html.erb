@@ -1,7 +1,13 @@
 <div class="container">
   <article class="row notebook">
     <ul>
-      <li class="col-md-2"><strong><%= @task.name %></strong></li>
+      <li class="col-md-2"><strong><%= @task.title %></strong></li>
+      <li class="col-md-2"><strong><%= @task.description %></strong></li>
+      <li class="col-md-2"><strong><%= @task.create_date %></strong></li>
+      <li class="col-md-2"><strong><%= @task.end_date %></strong></li>
+      <li class="col-md-2"><strong><%= @task.due_date %></strong></li>
+      <li class="col-md-2"><strong><%= @task.priority %></strong></li>
+      <li class="col-md-2"><a href="<%= root_path %>" class="btn btn-info"> Back </a></li>
       <li class="col-md-2"><a href="<%= task_path(@task.id) %>" data-method="delete" class="btn btn-danger"> Delete </a></li>
     </ul>
   </article>

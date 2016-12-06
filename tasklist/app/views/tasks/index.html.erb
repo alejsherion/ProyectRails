@@ -1,24 +1,34 @@
-<h1>TASKS</h1>
-<table class="table table-hover table-striped">
-  <thead>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Creation Date</th>
-    <th>Due Date</th>
-    <th>Finished Date</th>
-    <th>Priority</th>
-  </thead>
-  <tbody>
-
-  <tr>
-    <% @tasks.each do |task| %>
-    <td><%= task.title %></td>
-    <td><%= task.description %></td>
-    <td><%= task.create_date %></td>
-    <td><%= task.due_date %></td>
-    <td><%= task.end_date %></td>
-    <td><%= task.priority %></td>
-  </tr>
-</tbody>
-</table>
-<% end %>
+<div class="container">
+  <hi class="text-center"> TASKS </hi>
+  <section class="row text.center">
+    <a href="<%= new_task_path %>" class="btn btn-default"> New </a>
+  </section>
+  <% @tasks.each do |task| %>
+  <table class="table table-hover table-striped">
+    <thead>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Creation Date</th>
+      <th>Due Date</th>
+      <th>Finished Date</th>
+      <th>Priority</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= task.title %></td>
+        <td><%= task.description %></td>
+        <td><%= task.create_date %></td>
+        <td><%= task.due_date %></td>
+        <td><%= task.end_date %></td>
+        <td><%= task.priority %></td>
+        <td><a href="<%= task_path(task.id) %>" class="btn btn-info"> Show </a></li>
+        <td><a href="<%= edit_task_path(task.id) %>" class="btn btn-primary"> Edit </a></li>
+        <td><a href="<%= task_path(task.id) %>" data-method="delete" class="btn btn-danger"> Delete </a></li>
+      </tr>
+    </tbody>
+  </table>
+  <% end if @tasks.any? %>
+</div>

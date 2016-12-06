@@ -15,10 +15,10 @@ class TasksController < ApplicationController
     end
   end
 
-  def created
+  def create
     @task = Task.new(task_params)
     if @task.save
-      redirect_to task_path
+      redirect_to tasks_path
     else
       flash[:success] = "Task created. Ok"
       render 'new'
@@ -32,14 +32,14 @@ class TasksController < ApplicationController
       else
         flash[:error] = "Can't destroy the Task"
       end
-      redirect_to task_path
+      redirect_to tasks_path
   end
 
   def update
     find_task
     if @task.update(task_params)
       flash[:success] = "Task Updated. Ok"
-      redirect_to task_path
+      redirect_to tasks_path
     else
       flash[:error] = "Can't updated the Task"
       render 'edit'

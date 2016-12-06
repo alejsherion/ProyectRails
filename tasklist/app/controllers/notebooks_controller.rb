@@ -1,6 +1,6 @@
 class NotebooksController < ApplicationController
   def index
-    @noteboks = Notebook.all
+    @notebooks = Notebook.all
   end
 
   def new
