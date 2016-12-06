@@ -1,2 +1,9 @@
-<h1>Notebooks#show</h1>
-<p>Find me in app/views/notebooks/show.html.erb</p>
+<div class="container">
+  <article class="row notebook">
+    <ul>
+      <li class="col-md-2"><strong><%= @notebook.subject %></strong></li>
+      <li class="col-md-2"><a href="<%= root_path %>" class="btn btn-info"> Back </a></li>
+      <li class="col-md-2"><a href="<%= notebooks_path(@notebook.id) %>" data-method="delete" class="btn btn-danger"> Delete </a></li>
+    </ul>
+  </article>
+</div>
