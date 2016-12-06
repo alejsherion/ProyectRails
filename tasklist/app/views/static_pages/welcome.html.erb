@@ -1,10 +1,13 @@
 <div class="jumbotron">
   <% if user_signed_in? %>
     <h1 Welcome back, trusted user!</h1>
-    <ul>
-      <li><a href="/notebook">Notebooks</a></li>
-      <li><a href="/task">Tasks</a></li>
-    </ul>
+<div class="text-center">
+  <ul>
+    <li class="btn btn-warning"><a href="/notebook">Notebooks</a></li>
+    <li class="btn btn-info"><a href="/task">Tasks</a></li>
+  </ul>
+</div>
+
   <% else %>
     <h1 class="text-center">Welcome, new user!</h1>
     <p class="text-center">
