@@ -1,9 +1,22 @@
+
 <div class="container">
-  <article class="row notebook">
-    <ul>
-      <li class="col-md-2"><strong><%= @notebook.subject %></strong></li>
-      <li class="col-md-2"><a href="<%= root_path %>" class="btn btn-info"> Back </a></li>
-      <li class="col-md-2"><a href="<%= notebooks_path(@notebook.id) %>" data-method="delete" class="btn btn-danger"> Delete </a></li>
-    </ul>
-  </article>
-</div>
+  <article>
+    <h1 class="text-center">Task</h1>
+
+    <table class="table table-hover table-striped">
+      <thead>
+        <th>Subject</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @notebook.subject%></td>
+        </tr>
+      </tbody>
+    </table>
+      <div class="text-center">
+        <a href="<%= notebooks_path %>" class="btn btn-info"> Back </a></li>
+        <a href="<%= notebooks_path(@notebook.id) %>" data-method="delete" class="btn btn-danger"> Delete </a></li>
+      </div>
+
+    </article>
+    </div>

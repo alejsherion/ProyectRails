@@ -1,25 +1,17 @@
 <div class="jumbotron">
   <% if user_signed_in? %>
     <h1 Welcome back, trusted user!</h1>
-<<<<<<< HEAD
 <div class="text-center">
   <ul>
-    <li class="btn btn-danger"><a href="/notebook">Notebooks</a></li>
+    <li class="btn btn-danger"><a href="/notebooks">Notebooks</a></li>
     <li class="btn btn-danger"><a href="/tasks">Tasks</a></li>
   </ul>
 </div>
 
-=======
-    <ul>
-      <li><a href="/notebooks">Notebooks</a></li>
-      <li><a href="/tasks">Tasks</a></li>
-    </ul>
->>>>>>> fd5cfce1bb25e74301cc0381223eb6781a0d1f60
   <% else %>
     <h1 class="text-center">Welcome, new user!</h1>
     <p class="text-center">
-      You must sign in or sign up before you can access our super sweet,
-      top secret content.
+      You must sign in or sign up before you can access our tasks and notebooks
     </p>
     <div class="row-fluid">
       <div class="text-center">
