@@ -1,0 +1,23 @@
+<% form_name ||= "Notebooks" %>
+<h1 class="text-center">  <%= form_name %> Notebook </h1>
+<%= form_for @notebook , method: (form_name.downcase == 'edit' ? 'put' : 'post') do |f| %>
+  <% if @notebook.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@notebook.errors.count, "error") %> prohibited
+          this article from being saved:
+        </h2>
+        <ul>
+          <% @notebook.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <div class="form-group">
+    <%= f.label :subject%>
+    <%= f.text_field :subject, class: "form-control" %>
+  </div>
+  <%= f.submit "#{form_name} Notebook", class: "btn btn-primary" %>
+  <a href="<%= notebooks_path %>" class="btn btn-default"> View all </a>
+<% end %>
